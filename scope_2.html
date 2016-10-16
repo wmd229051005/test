@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scope 作用域-test</title>
+    <script type="text/javascript">
+        /**
+         * 基础面试题
+         * */
+        
+        var str1 = 'global';
+        
+        function t1() {
+            console.log(str1);
+            console.log(str2);      //str2 is not defined
+
+            str2 = 'local';
+            // 如果用了 var 声明 str2，那么t1()外部不能访问 str2；
+            // 声明 str2后，存在变量提升，所以此时15行应打印 undefined
+            //var str2 = 'local';
+        }
+
+//        console.log(str2);      //str2 is not defined
+
+        t1();
+//        console.log(str2);          //local
+//        console.log(window);        //window 对象中存在 str1与 str2
+    </script>
+</head>
+<body>
+
+</body>
+</html>

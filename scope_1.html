@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scope 作用域--var</title>
+    <script type="text/javascript">
+        /**
+         * 声明变量 var的作用
+         * var 是在函数运行的上下文中声明一个变量，
+         * 如果不加 var，则理解为一个赋值操作，但不能理解为声明了一个全局变量
+         * */
+        /*
+        console.log(window.d);      //undefined
+        console.log(window.e);      //undefined
+        
+        function t() {
+            d = 5;          //赋值操作
+            var e = 6;
+        }
+        t();
+
+        console.log(window.d);      //undefined
+        console.log(window.e);      //undefined
+        */
+
+        function t1() {
+            var d;
+            function t2() {
+                d = 5;
+                e = 6;
+            }
+            t2();
+        }
+
+        t1();
+        console.log(e);     //6
+        console.log(window.d);  //undefined
+        console.log(d);     //d is not undefined
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this 用法</title>
+    <script type="text/javascript">
+        /**
+         * 1、在普通方法中指向 window
+         * 2、作为对象的方法调用时，指向方法的调用者
+         * */
+        var obj = {
+            xx: 999,
+            yy: 888,
+            t: function () {
+                console.log(this.xx)
+            }
+        }
+        var dog = {xx: 'wangwang'};
+        dog.t = obj.t;
+        dog.t();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
