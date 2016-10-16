@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01</title>
+    <script type="text/javascript">
+        /**
+         * 在使用var 声明变量但未对其加以初始化时，这个变量的值为 undefined
+         * 函数的作用域取决于声明时，而不是调用时
+         * */
+        function t1() {
+            var d;
+            d = 2;
+            function t2() {
+                console.log(d);
+                d = 5;
+                e = 6;
+                console.log(d);     //5
+            }
+//            console.log(e);     //e is not defined
+            t2();
+        }
+        t1();
+        console.log(e);     //6
+        console.log(window.d);
+        console.log(d);     //d is not defined
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
